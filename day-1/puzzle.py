@@ -11,7 +11,7 @@ numbers = [
 ]
 part1 = 0
 part2 = 0
-with open('small-input') as file:
+with open('input') as file:
     for row in file:
         part1set = []
         part2set = []
