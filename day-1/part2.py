@@ -9,26 +9,20 @@ numbers = [
     'eight',
     'nine',
 ]
-part1 = 0
-part2 = 0
+count = 0
 with open('input') as file:
     for row in file:
-        part1set = []
-        part2set = []
+        only_nums = []
         index = 0
         while index < len(row):
             if row[index].isdigit():
-                part1set.append(row[index])
-                part2set.append(row[index])
+                only_nums.append(row[index])
             for num in numbers:
                 if (index < (len(row) - len(num))) and (
                     row[index : index + len(num)] == num
                 ):
-                    part2set.append(numbers.index(num) + 1)
+                    only_nums.append(numbers.index(num) + 1)
             index += 1
-        if len(part1set) != 0:
-            part1 += int(f'{part1set[0]}{part1set[-1]}')
-        if len(part2set) != 0:
-            part2 += int(f'{part2set[0]}{part2set[-1]}')
-    print(part1)
-    print(part2)
+        if len(only_nums) != 0:
+            count += int(f'{only_nums[0]}{only_nums[-1]}')
+    print(count)
